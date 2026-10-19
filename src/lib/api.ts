@@ -1,0 +1,1 @@
+export async function api<T>(path:string,init?:RequestInit):Promise<T>{const response=await fetch('/api'+path,{credentials:'same-origin',...init});if(!response.ok){const body=await response.json().catch(()=>({error:'REQUEST_FAILED'}));throw Error(body.error);}return response.status===204?undefined as T:response.json();}

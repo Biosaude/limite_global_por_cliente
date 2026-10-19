@@ -1,0 +1,840 @@
+{
+  "sourceFilename": "official.xlsx",
+  "referenceDate": "2026-10-19",
+  "policy": {
+    "reclassifyByDueDate": true,
+    "sameDay": "overdue"
+  },
+  "status": "blocked",
+  "recordCounts": {
+    "source": {
+      "upcoming": 1583,
+      "overdue": 765,
+      "received": 2751
+    },
+    "accounting": {
+      "upcoming": 1558,
+      "overdue": 790,
+      "received": 2751
+    }
+  },
+  "sourceRecords": 5099,
+  "parsedRecords": 5099,
+  "quarantinedRecords": 0,
+  "rawTotals": {
+    "upcoming": "25711247.24",
+    "overdue": "10575015.21",
+    "received": "56999819.30",
+    "global": "93286081.75"
+  },
+  "provisional": {
+    "upcoming": "25279169.98",
+    "overdue": "11007092.47",
+    "received": "56999819.30",
+    "global": "93286081.75"
+  },
+  "issues": [
+    {
+      "code": "RECLASSIFIED_BY_DUE_DATE",
+      "severity": "info",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 8,
+      "message": "Faixa de origem upcoming; classificação contábil overdue por vencimento, conforme política registrada."
+    },
+    {
+      "code": "DAYS_MISMATCH",
+      "severity": "warning",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 90,
+      "message": "Dias informados divergem da data de referência."
+    },
+    {
+      "code": "DAYS_MISMATCH",
+      "severity": "warning",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 91,
+      "message": "Dias informados divergem da data de referência."
+    },
+    {
+      "code": "RECLASSIFIED_BY_DUE_DATE",
+      "severity": "info",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 182,
+      "message": "Faixa de origem upcoming; classificação contábil overdue por vencimento, conforme política registrada."
+    },
+    {
+      "code": "DAYS_MISMATCH",
+      "severity": "warning",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 217,
+      "message": "Dias informados divergem da data de referência."
+    },
+    {
+      "code": "DAYS_MISMATCH",
+      "severity": "warning",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 281,
+      "message": "Dias informados divergem da data de referência."
+    },
+    {
+      "code": "DAYS_MISMATCH",
+      "severity": "warning",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 282,
+      "message": "Dias informados divergem da data de referência."
+    },
+    {
+      "code": "DAYS_MISMATCH",
+      "severity": "warning",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 283,
+      "message": "Dias informados divergem da data de referência."
+    },
+    {
+      "code": "DAYS_MISMATCH",
+      "severity": "warning",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 284,
+      "message": "Dias informados divergem da data de referência."
+    },
+    {
+      "code": "DAYS_MISMATCH",
+      "severity": "warning",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 285,
+      "message": "Dias informados divergem da data de referência."
+    },
+    {
+      "code": "DAYS_MISMATCH",
+      "severity": "warning",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 286,
+      "message": "Dias informados divergem da data de referência."
+    },
+    {
+      "code": "DAYS_MISMATCH",
+      "severity": "warning",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 287,
+      "message": "Dias informados divergem da data de referência."
+    },
+    {
+      "code": "DAYS_MISMATCH",
+      "severity": "warning",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 288,
+      "message": "Dias informados divergem da data de referência."
+    },
+    {
+      "code": "DAYS_MISMATCH",
+      "severity": "warning",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 372,
+      "message": "Dias informados divergem da data de referência."
+    },
+    {
+      "code": "DAYS_MISMATCH",
+      "severity": "warning",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 373,
+      "message": "Dias informados divergem da data de referência."
+    },
+    {
+      "code": "DAYS_MISMATCH",
+      "severity": "warning",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 374,
+      "message": "Dias informados divergem da data de referência."
+    },
+    {
+      "code": "RECLASSIFIED_BY_DUE_DATE",
+      "severity": "info",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 381,
+      "message": "Faixa de origem upcoming; classificação contábil overdue por vencimento, conforme política registrada."
+    },
+    {
+      "code": "RECLASSIFIED_BY_DUE_DATE",
+      "severity": "info",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 457,
+      "message": "Faixa de origem upcoming; classificação contábil overdue por vencimento, conforme política registrada."
+    },
+    {
+      "code": "RECLASSIFIED_BY_DUE_DATE",
+      "severity": "info",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 461,
+      "message": "Faixa de origem upcoming; classificação contábil overdue por vencimento, conforme política registrada."
+    },
+    {
+      "code": "DAYS_MISMATCH",
+      "severity": "warning",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 533,
+      "message": "Dias informados divergem da data de referência."
+    },
+    {
+      "code": "RECLASSIFIED_BY_DUE_DATE",
+      "severity": "info",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 537,
+      "message": "Faixa de origem upcoming; classificação contábil overdue por vencimento, conforme política registrada."
+    },
+    {
+      "code": "RECLASSIFIED_BY_DUE_DATE",
+      "severity": "info",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 538,
+      "message": "Faixa de origem upcoming; classificação contábil overdue por vencimento, conforme política registrada."
+    },
+    {
+      "code": "RECLASSIFIED_BY_DUE_DATE",
+      "severity": "info",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 539,
+      "message": "Faixa de origem upcoming; classificação contábil overdue por vencimento, conforme política registrada."
+    },
+    {
+      "code": "RECLASSIFIED_BY_DUE_DATE",
+      "severity": "info",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 945,
+      "message": "Faixa de origem upcoming; classificação contábil overdue por vencimento, conforme política registrada."
+    },
+    {
+      "code": "RECLASSIFIED_BY_DUE_DATE",
+      "severity": "info",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 1018,
+      "message": "Faixa de origem upcoming; classificação contábil overdue por vencimento, conforme política registrada."
+    },
+    {
+      "code": "RECLASSIFIED_BY_DUE_DATE",
+      "severity": "info",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 1064,
+      "message": "Faixa de origem upcoming; classificação contábil overdue por vencimento, conforme política registrada."
+    },
+    {
+      "code": "RECLASSIFIED_BY_DUE_DATE",
+      "severity": "info",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 1090,
+      "message": "Faixa de origem upcoming; classificação contábil overdue por vencimento, conforme política registrada."
+    },
+    {
+      "code": "RECLASSIFIED_BY_DUE_DATE",
+      "severity": "info",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 1159,
+      "message": "Faixa de origem upcoming; classificação contábil overdue por vencimento, conforme política registrada."
+    },
+    {
+      "code": "RECLASSIFIED_BY_DUE_DATE",
+      "severity": "info",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 1160,
+      "message": "Faixa de origem upcoming; classificação contábil overdue por vencimento, conforme política registrada."
+    },
+    {
+      "code": "RECLASSIFIED_BY_DUE_DATE",
+      "severity": "info",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 1161,
+      "message": "Faixa de origem upcoming; classificação contábil overdue por vencimento, conforme política registrada."
+    },
+    {
+      "code": "RECLASSIFIED_BY_DUE_DATE",
+      "severity": "info",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 1162,
+      "message": "Faixa de origem upcoming; classificação contábil overdue por vencimento, conforme política registrada."
+    },
+    {
+      "code": "RECLASSIFIED_BY_DUE_DATE",
+      "severity": "info",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 1163,
+      "message": "Faixa de origem upcoming; classificação contábil overdue por vencimento, conforme política registrada."
+    },
+    {
+      "code": "RECLASSIFIED_BY_DUE_DATE",
+      "severity": "info",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 1386,
+      "message": "Faixa de origem upcoming; classificação contábil overdue por vencimento, conforme política registrada."
+    },
+    {
+      "code": "RECLASSIFIED_BY_DUE_DATE",
+      "severity": "info",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 1387,
+      "message": "Faixa de origem upcoming; classificação contábil overdue por vencimento, conforme política registrada."
+    },
+    {
+      "code": "DAYS_MISMATCH",
+      "severity": "warning",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 1401,
+      "message": "Dias informados divergem da data de referência."
+    },
+    {
+      "code": "RECLASSIFIED_BY_DUE_DATE",
+      "severity": "info",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 1402,
+      "message": "Faixa de origem upcoming; classificação contábil overdue por vencimento, conforme política registrada."
+    },
+    {
+      "code": "RECLASSIFIED_BY_DUE_DATE",
+      "severity": "info",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 1447,
+      "message": "Faixa de origem upcoming; classificação contábil overdue por vencimento, conforme política registrada."
+    },
+    {
+      "code": "DAYS_MISMATCH",
+      "severity": "warning",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 1449,
+      "message": "Dias informados divergem da data de referência."
+    },
+    {
+      "code": "RECLASSIFIED_BY_DUE_DATE",
+      "severity": "info",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 1460,
+      "message": "Faixa de origem upcoming; classificação contábil overdue por vencimento, conforme política registrada."
+    },
+    {
+      "code": "RECLASSIFIED_BY_DUE_DATE",
+      "severity": "info",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 1461,
+      "message": "Faixa de origem upcoming; classificação contábil overdue por vencimento, conforme política registrada."
+    },
+    {
+      "code": "RECLASSIFIED_BY_DUE_DATE",
+      "severity": "info",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 1473,
+      "message": "Faixa de origem upcoming; classificação contábil overdue por vencimento, conforme política registrada."
+    },
+    {
+      "code": "RECLASSIFIED_BY_DUE_DATE",
+      "severity": "info",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 1487,
+      "message": "Faixa de origem upcoming; classificação contábil overdue por vencimento, conforme política registrada."
+    },
+    {
+      "code": "OPEN_AND_RECEIVED",
+      "severity": "warning",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 461,
+      "message": "Título em saldo e recebimentos: possível pagamento parcial; valores não são unidos por join.",
+      "related": [
+        {
+          "sheet": "CONSOLIDADO - RECEBIDO (VA527)",
+          "row": 1291
+        }
+      ]
+    },
+    {
+      "code": "POSSIBLE_DOUBLE_COUNT",
+      "severity": "blocking",
+      "sheet": "CONSOLIDADO - A VENCER (VA529)",
+      "row": 461,
+      "message": "Saldo mais recebimentos excede o nominal; requer conciliação da origem.",
+      "related": [
+        {
+          "sheet": "CONSOLIDADO - RECEBIDO (VA527)",
+          "row": 1291
+        }
+      ]
+    },
+    {
+      "code": "CLIENT_NAME_ONLY",
+      "severity": "warning",
+      "sheet": "",
+      "row": 0,
+      "message": "Fonte sem CNPJ/código de cliente: agrupamento pelo nome normalizado, sem identidade fiscal garantida."
+    }
+  ],
+  "sheets": [
+    {
+      "name": "CONSOLIDADO - A VENCER (VA529)",
+      "band": "upcoming",
+      "records": 1583,
+      "columns": [
+        {
+          "position": 1,
+          "name": "Nome cliente",
+          "types": {
+            "string": 1583
+          },
+          "empty": 0
+        },
+        {
+          "position": 2,
+          "name": "Duplicata",
+          "types": {
+            "number": 1583
+          },
+          "empty": 0
+        },
+        {
+          "position": 3,
+          "name": "Parcela",
+          "types": {
+            "number": 1583
+          },
+          "empty": 0
+        },
+        {
+          "position": 4,
+          "name": "Dt.emissao",
+          "types": {
+            "date": 1583
+          },
+          "empty": 0,
+          "minDate": "2026-02-24",
+          "maxDate": "2026-10-19"
+        },
+        {
+          "position": 5,
+          "name": "Dt.vencimento",
+          "types": {
+            "date": 1583
+          },
+          "empty": 0,
+          "minDate": "2026-10-16",
+          "maxDate": "2027-03-18"
+        },
+        {
+          "position": 6,
+          "name": "Dias para vencer",
+          "types": {
+            "formula": 1583
+          },
+          "empty": 0
+        },
+        {
+          "position": 7,
+          "name": "Dt.cirurgia",
+          "types": {
+            "date": 1578,
+            "string": 5
+          },
+          "empty": 5,
+          "minDate": "2025-07-01",
+          "maxDate": "2026-10-16"
+        },
+        {
+          "position": 8,
+          "name": "Paciente",
+          "types": {
+            "string": 1583
+          },
+          "empty": 3
+        },
+        {
+          "position": 9,
+          "name": "Nome hospital",
+          "types": {
+            "string": 1583
+          },
+          "empty": 0
+        },
+        {
+          "position": 10,
+          "name": "Descricao do plano de saude",
+          "types": {
+            "string": 1583
+          },
+          "empty": 4
+        },
+        {
+          "position": 11,
+          "name": "Nome do medico",
+          "types": {
+            "string": 1583
+          },
+          "empty": 7
+        },
+        {
+          "position": 12,
+          "name": "Vr.duplicata",
+          "types": {
+            "number": 1583
+          },
+          "empty": 0
+        },
+        {
+          "position": 13,
+          "name": "Vr.desconto",
+          "types": {
+            "number": 1583
+          },
+          "empty": 0
+        },
+        {
+          "position": 14,
+          "name": "Vr.aberto",
+          "types": {
+            "number": 1583
+          },
+          "empty": 0
+        },
+        {
+          "position": 15,
+          "name": "Descricao",
+          "types": {
+            "string": 1583
+          },
+          "empty": 0
+        },
+        {
+          "position": 16,
+          "name": "Descricao",
+          "types": {
+            "string": 1583
+          },
+          "empty": 0
+        },
+        {
+          "position": 17,
+          "name": "Nome representante",
+          "types": {
+            "string": 1583
+          },
+          "empty": 0
+        },
+        {
+          "position": 18,
+          "name": "Numero do titulo completo",
+          "types": {
+            "string": 1583
+          },
+          "empty": 0
+        }
+      ],
+      "financialColumn": 14
+    },
+    {
+      "name": "CONSOLIDADO - VENCIDO (VA529)",
+      "band": "overdue",
+      "records": 765,
+      "columns": [
+        {
+          "position": 1,
+          "name": "Nome cliente",
+          "types": {
+            "string": 765
+          },
+          "empty": 0
+        },
+        {
+          "position": 2,
+          "name": "Duplicata",
+          "types": {
+            "number": 765
+          },
+          "empty": 0
+        },
+        {
+          "position": 3,
+          "name": "Parcela",
+          "types": {
+            "number": 765
+          },
+          "empty": 0
+        },
+        {
+          "position": 4,
+          "name": "Dt.emissao",
+          "types": {
+            "date": 765
+          },
+          "empty": 0,
+          "minDate": "2023-06-23",
+          "maxDate": "2026-10-09"
+        },
+        {
+          "position": 5,
+          "name": "Dt.vencimento",
+          "types": {
+            "date": 765
+          },
+          "empty": 0,
+          "minDate": "2024-01-02",
+          "maxDate": "2026-10-15"
+        },
+        {
+          "position": 6,
+          "name": "Qtd. De dias vencidos",
+          "types": {
+            "formula": 765
+          },
+          "empty": 0
+        },
+        {
+          "position": 7,
+          "name": "Dt.cirurgia",
+          "types": {
+            "date": 749,
+            "string": 16
+          },
+          "empty": 16,
+          "minDate": "2021-09-07",
+          "maxDate": "2026-10-07"
+        },
+        {
+          "position": 8,
+          "name": "Paciente",
+          "types": {
+            "string": 765
+          },
+          "empty": 16
+        },
+        {
+          "position": 9,
+          "name": "Nome hospital",
+          "types": {
+            "string": 765
+          },
+          "empty": 16
+        },
+        {
+          "position": 10,
+          "name": "Descricao do plano de saude",
+          "types": {
+            "string": 765
+          },
+          "empty": 16
+        },
+        {
+          "position": 11,
+          "name": "Nome do medico",
+          "types": {
+            "string": 765
+          },
+          "empty": 17
+        },
+        {
+          "position": 12,
+          "name": "Vr.duplicata",
+          "types": {
+            "number": 765
+          },
+          "empty": 0
+        },
+        {
+          "position": 13,
+          "name": "Vr.desconto",
+          "types": {
+            "number": 765
+          },
+          "empty": 0
+        },
+        {
+          "position": 14,
+          "name": "Vr.aberto",
+          "types": {
+            "number": 765
+          },
+          "empty": 0
+        },
+        {
+          "position": 15,
+          "name": "Descricao",
+          "types": {
+            "string": 765
+          },
+          "empty": 0
+        },
+        {
+          "position": 16,
+          "name": "Nome representante",
+          "types": {
+            "string": 765
+          },
+          "empty": 0
+        },
+        {
+          "position": 17,
+          "name": "Numero do titulo completo",
+          "types": {
+            "string": 765
+          },
+          "empty": 0
+        }
+      ],
+      "financialColumn": 14
+    },
+    {
+      "name": "CONSOLIDADO - RECEBIDO (VA527)",
+      "band": "received",
+      "records": 2751,
+      "columns": [
+        {
+          "position": 1,
+          "name": "Nome cliente",
+          "types": {
+            "string": 2751
+          },
+          "empty": 0
+        },
+        {
+          "position": 2,
+          "name": "Duplicata",
+          "types": {
+            "number": 2751
+          },
+          "empty": 0
+        },
+        {
+          "position": 3,
+          "name": "Parcela",
+          "types": {
+            "number": 2751
+          },
+          "empty": 0
+        },
+        {
+          "position": 4,
+          "name": "Dt.emissao",
+          "types": {
+            "date": 2751
+          },
+          "empty": 0,
+          "minDate": "2023-09-14",
+          "maxDate": "2026-10-19"
+        },
+        {
+          "position": 5,
+          "name": "Dt.vencimento",
+          "types": {
+            "date": 2751
+          },
+          "empty": 0,
+          "minDate": "2024-03-03",
+          "maxDate": "2026-12-28"
+        },
+        {
+          "position": 6,
+          "name": "Dt.recebimento",
+          "types": {
+            "date": 2751
+          },
+          "empty": 0,
+          "minDate": "2026-01-02",
+          "maxDate": "2026-10-19"
+        },
+        {
+          "position": 7,
+          "name": "Dt.cirurgia",
+          "types": {
+            "date": 2655,
+            "string": 96
+          },
+          "empty": 96,
+          "minDate": "2022-03-02",
+          "maxDate": "2026-10-15"
+        },
+        {
+          "position": 8,
+          "name": "Paciente",
+          "types": {
+            "string": 2751
+          },
+          "empty": 85
+        },
+        {
+          "position": 9,
+          "name": "Nome hospital",
+          "types": {
+            "string": 2751
+          },
+          "empty": 38
+        },
+        {
+          "position": 10,
+          "name": "Descricao do plano de saude",
+          "types": {
+            "string": 2751
+          },
+          "empty": 86
+        },
+        {
+          "position": 11,
+          "name": "Nome do medico",
+          "types": {
+            "string": 2751
+          },
+          "empty": 85
+        },
+        {
+          "position": 12,
+          "name": "Dt.credito",
+          "types": {
+            "date": 2751
+          },
+          "empty": 0,
+          "minDate": "2026-01-02",
+          "maxDate": "2026-10-19"
+        },
+        {
+          "position": 13,
+          "name": "Vr.duplicata",
+          "types": {
+            "number": 2751
+          },
+          "empty": 0
+        },
+        {
+          "position": 14,
+          "name": "Vr.desconto",
+          "types": {
+            "number": 2751
+          },
+          "empty": 0
+        },
+        {
+          "position": 15,
+          "name": "Vr.recebido",
+          "types": {
+            "number": 2751
+          },
+          "empty": 0
+        },
+        {
+          "position": 16,
+          "name": "Descricao",
+          "types": {
+            "string": 2751
+          },
+          "empty": 0
+        },
+        {
+          "position": 17,
+          "name": "Nome representante",
+          "types": {
+            "string": 2751
+          },
+          "empty": 0
+        },
+        {
+          "position": 18,
+          "name": "Numero do titulo completo",
+          "types": {
+            "string": 2751
+          },
+          "empty": 0
+        }
+      ],
+      "financialColumn": 15
+    }
+  ]
+}

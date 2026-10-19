@@ -1,0 +1,57 @@
+# BIOSAÚDE — Limite Global por Cliente
+
+React/TypeScript/Vite com API Express para Vercel e Neon PostgreSQL. Implementação em branch `feat/limite-global-backend`, sem Supabase. A estrutura e os componentes visuais compatíveis foram preservados a partir do projeto de Retenção de Faturamento.
+
+A posição oficial analisada é **19/10/2026**. A reclassificação por vencimento foi autorizada: Vencido inclui o próprio dia. A planilha permanece **bloqueada para publicação financeira** pelo título 87848/01, a conferir com o financeiro. Não foi realizado deploy, merge, gravação remota ou aplicação de migration no Neon.
+
+## Desenvolvimento
+
+Node >=22 e npm:
+
+```sh
+cd /workspace/limite_global_por_cliente
+npm ci --cache /tmp/lgc-npm-cache
+npm run dev
+```
+
+API na porta 3001 e frontend na 5173, ambos locais. Variáveis devem ser injetadas no processo pelo ambiente; `.env.example` é documentação e **não é carregado automaticamente**. Não colocar valores secretos em argumentos, commits, código frontend ou variáveis `VITE_*`.
+
+- `DATABASE_URL`: URL PostgreSQL do projeto Neon novo, com acesso ao schema da aplicação. Driver verifica o certificado TLS; apenas hosts `.neon.tech` são aceitos. Use conexão pooled recomendada pelo Neon para Vercel.
+- `APP_ORIGIN`: origem exata da interface, sem barra final; em desenvolvimento `http://127.0.0.1:5173`. Configurar separadamente em Preview e Production.
+- `PUBLIC_FINANCIAL_DATA_AUTHORIZED`: manter `false` até autorização expressa da Biosaúde para nomes associados a valores financeiros.
+
+Sem Neon/configuração, a interface abre sem dados, a leitura pública é negada e `/api/ready` responde 503. Não há dados fictícios no dashboard nem autenticação de desenvolvimento sem senha.
+
+## Banco existente e preparação de implantação
+
+1. A definição inicial fornecida está em `db/001_existing_baseline.sql`. **Já foi aplicada pelo administrador; não reaplicar no Neon.**
+2. Configure `DATABASE_URL` exclusivamente no servidor. Execute `npm run db:inspect` para confrontar o schema real com o fornecido. Ainda não foi possível fazer essa inspeção nesta máquina, por ausência de conexão.
+3. Após essa conferência, revise/aplique uma única vez `db/migrations/002_lgc_proposal.sql`. Ela preserva tabelas e registros existentes, adiciona colunas opcionais e estruturas auxiliares. Sua execução foi validada em PostgreSQL embarcado, não no Neon remoto. Não há execução automática no build ou na inicialização.
+4. Use papel de banco exclusivo desta aplicação. O proprietário aplica migrations; o papel de runtime recebe apenas SELECT/INSERT nas tabelas financeiras e metadados, UPDATE no ponteiro/login attempts, SELECT/INSERT/DELETE em sessões, e USAGE nas sequences necessárias. Não conceder acesso ao banco antigo. Sem privilégios de runtime definidos, a aplicação não está pronta para produção.
+5. Para criar o primeiro admin, injete `ADMIN_EMAIL` e `ADMIN_PASSWORD` de modo seguro e execute `npm run admin:create`. A senha exige 14–256 caracteres, é armazenada com scrypt e não é registrada. Remova a variável de bootstrap após usar. Não existe credencial padrão.
+6. Entre pela interface administrativa, selecione a data de referência, importe XLSX, revise a prévia e corrija impedimentos na origem. Confirmar publicação é uma operação transacional; não exige SQL nem GitHub para atualizações posteriores.
+7. Configure o projeto Vercel existente com build `npm run build`, saída `dist` e as variáveis de servidor acima. `vercel.json` contém a função/rewrite e cabeçalhos. Upload binário limitado a 4 MiB, abaixo do limite da função. Testar Preview com banco/dados isolados antes de solicitar autorização de produção.
+
+Nenhuma política pública é ativada automaticamente. Convites, recuperação de senha, MFA e manutenção operacional das contas devem ser definidos pelo administrador antes de disponibilizar o acesso administrativo na Internet conforme sua política interna; esta base implementa login com senha, papéis e revogação, sem provedor externo.
+
+## Verificação e conciliação
+
+```sh
+npm test
+npm run build
+npm run audit:official -- .local/official.xlsx 2026-10-19 docs/official-audit.json
+python scripts/independent-audit.py .local/official.xlsx
+```
+
+A planilha original está em `.local/official.xlsx` nesta máquina, ignorada pelo Git e com permissão 0600. Não é incorporada ao build, repositório ou API pública. O servidor Vite também bloqueia acesso a `.local`, documentos, backend e arquivos Excel/ZIP pelo navegador. Fora desta máquina, forneça a planilha oficial por caminho privado ou `OFFICIAL_XLSX`. Os testes oficiais verificam o hash exato do anexo; se o arquivo estiver ausente, essa suíte fica explicitamente **skipped**, enquanto os demais testes continuam. Bases novas não devem ser comparadas aos valores fixos desta versão.
+
+O auditor independente requer `openpyxl==3.1.5`, declarado em `scripts/requirements-audit.txt`. Usa Decimal e os valores cached do Excel; o relatório detalhado com identificadores permanece em `.local/independent-audit.private.json`. O relatório versionado `docs/official-audit.json` não contém pacientes, médicos ou nomes de clientes.
+
+Consulte [auditoria financeira](docs/FINANCIAL-AUDIT.md), [arquitetura e modelo](docs/ARCHITECTURE.md), [contratos de API](docs/API.md) e [validação](docs/VALIDATION.md).
+
+## Pendências concretas
+
+- Conciliação financeira do título **87848/01**, A Vencer linha 461 e Recebido linha 1291: R$ 4.300,00 em cada, nominal R$ 4.300,00. Ambas as linhas preservadas; nenhuma dedução automática. Corrigir a origem e reimportar após decisão do financeiro.
+- Configurar acesso seguro ao Neon, inspecionar o schema real, aplicar a migration aditiva revisada, criar admin e validar o fluxo em Preview real.
+- Autorizar expressamente eventual exposição pública de nomes/valores. O bloqueio de acesso é padrão.
+- PR/deploy/merge não realizados. O remoto estava sem commits e sem `main`; não foi criada uma base artificial na `main` para abrir PR.

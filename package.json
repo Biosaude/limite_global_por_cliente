@@ -1,0 +1,7 @@
+{
+ "name":"biosaude-limite-global","version":"0.1.0","private":true,"type":"module","engines":{"node":">=22"},
+ "scripts":{"dev":"tsx scripts/dev.ts","dev:api":"tsx server/local.ts","dev:web":"vite --host 127.0.0.1","build":"tsc --noEmit && vite build","test":"vitest run","audit:official":"tsx scripts/audit.ts","db:inspect":"tsx scripts/inspect-db.ts","admin:create":"tsx scripts/create-admin.ts"},
+ "dependencies":{"react":"^19.2.0","react-dom":"^19.2.0","recharts":"^2.15.4","lucide-react":"^0.575.0","express":"^5.1.0","helmet":"^8.1.0","express-rate-limit":"^8.1.0","exceljs":"^4.4.0","decimal.js":"^10.6.0","pg":"^8.16.3","zod":"^3.24.2","yauzl":"^3.2.0"},
+ "devDependencies":{"@types/react":"^19.2.0","@types/react-dom":"^19.2.0","@types/node":"^22.16.5","@types/express":"^5.0.0","@types/pg":"^8.15.5","@types/yauzl":"^2.10.3","@vitejs/plugin-react":"^5.0.4","typescript":"^5.8.3","vite":"^7.3.1","vitest":"^3.2.4","tsx":"^4.20.0","@electric-sql/pglite":"0.5.10"},
+ "overrides":{"exceljs":{"uuid":"^11.1.1"}}
+}

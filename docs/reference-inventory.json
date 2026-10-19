@@ -1,0 +1,1005 @@
+[
+  {
+    "path": ".env.example",
+    "bytes": 353,
+    "sha256": "2d3944d24a6de744ffdf43d14c3821074efdc3b12100290f77fc6532200fe264",
+    "imports": [],
+    "exports": []
+  },
+  {
+    "path": ".gitignore",
+    "bytes": 106,
+    "sha256": "82fe7902b3c1ce92b53f60432c45d1b11b086266c49b8870079e4c99ca44d070",
+    "imports": [],
+    "exports": []
+  },
+  {
+    "path": "README.md",
+    "bytes": 13094,
+    "sha256": "d774d770726281907b6d6c6a75e3c10cc874b3c4ab046455602f3b3799a76253",
+    "imports": [],
+    "exports": []
+  },
+  {
+    "path": "api/handler.ts",
+    "bytes": 77,
+    "sha256": "935fa967884b069213e0080754bba4d9b1259ebaccc0777d5daf68f90abc516e",
+    "imports": [
+      "../server/app.js"
+    ],
+    "exports": []
+  },
+  {
+    "path": "docs/BASE-COMPARTILHADA-CAMPOS-OFICIAIS.md",
+    "bytes": 6888,
+    "sha256": "68bb505c872a4b4f0489525cfa9ca08a25c1f426c423a67a40e8e0caa8ac3d1c",
+    "imports": [],
+    "exports": []
+  },
+  {
+    "path": "docs/CONCILIACAO-FINANCEIRA-GERAL.md",
+    "bytes": 10944,
+    "sha256": "c951310c32f825b670487fe96438371206c0386bc0e6443ee74828d2589967e8",
+    "imports": [],
+    "exports": []
+  },
+  {
+    "path": "docs/CORRECOES-DADOS-AUDITORIA-PERMISSOES.md",
+    "bytes": 4450,
+    "sha256": "013b7c68a9682e1cc7927872fcdb94d20af6c7321daba348edc83625bb3f5d3f",
+    "imports": [],
+    "exports": []
+  },
+  {
+    "path": "docs/GERENCIAMENTO-BASE.md",
+    "bytes": 6467,
+    "sha256": "17eaafce3725f3a071536f38ec9af3c772a6c6ad4b99b814a762729f9a7e1b26",
+    "imports": [],
+    "exports": []
+  },
+  {
+    "path": "docs/LAYOUT-RANKING.md",
+    "bytes": 3923,
+    "sha256": "c5ca9527a08f2a170deb8b01f8ebe6d92c9475425384e23ca85dd5980b0647fb",
+    "imports": [],
+    "exports": []
+  },
+  {
+    "path": "docs/PUBLICACAO-SEMANAL.md",
+    "bytes": 14439,
+    "sha256": "746310eea02411411bc5aa827dcc8e5327eadcf208a3b0696ceb95fbaf15b2f6",
+    "imports": [],
+    "exports": []
+  },
+  {
+    "path": "docs/REFERENCIA-FINANCEIRA-DINAMICA.md",
+    "bytes": 9047,
+    "sha256": "c7e550c7eef56ef86530a186d618fc39c4050feb17c987189806c5f6deba3b32",
+    "imports": [],
+    "exports": []
+  },
+  {
+    "path": "docs/SINCRONIZACAO-AUDITORIA.md",
+    "bytes": 13149,
+    "sha256": "9a77b761335a11c0bd9d1fbf888eb2ec4f37665dc14f26c2a89b76cd5fc88dab",
+    "imports": [],
+    "exports": []
+  },
+  {
+    "path": "docs/VALIDACAO.md",
+    "bytes": 5788,
+    "sha256": "99049a96c2853f7e3c23ed73469fb18c48a0503d6473addacdadcf36fc997c34",
+    "imports": [],
+    "exports": []
+  },
+  {
+    "path": "docs/auditoria-base.json",
+    "bytes": 14960,
+    "sha256": "bf7b869f07b6bef3f7ab75632537b75dc3682989a7f1cc37dd282f1f937080d9",
+    "imports": [],
+    "exports": []
+  },
+  {
+    "path": "docs/conciliacao-financeira-geral.json",
+    "bytes": 4978,
+    "sha256": "653dfa96f6631e3fd40674edee2b5a0f6e56519dc4f307f8542f199940749f34",
+    "imports": [],
+    "exports": []
+  },
+  {
+    "path": "docs/validacao-independente.json",
+    "bytes": 2689,
+    "sha256": "3774324ffd7268b705da65ac095d89ac02b6e02420877f92b79ed247cb503be9",
+    "imports": [],
+    "exports": []
+  },
+  {
+    "path": "docs/validacao-ranking-independente.json",
+    "bytes": 858,
+    "sha256": "84aa93ae7938205403c01503926944b9acf1a6dc012ef0eee47126aa2e605728",
+    "imports": [],
+    "exports": []
+  },
+  {
+    "path": "index.html",
+    "bytes": 334,
+    "sha256": "a545e3132db0b7df2a44c59e165840e15adcd9a412e8e3537e4eaca0857a80ad",
+    "imports": [],
+    "exports": []
+  },
+  {
+    "path": "package-lock.json",
+    "bytes": 235976,
+    "sha256": "0d80f73519494b58ea5b864bbdceffabcd6e66e6783b2a2d56c391682ab94712",
+    "imports": [],
+    "exports": []
+  },
+  {
+    "path": "package.json",
+    "bytes": 1445,
+    "sha256": "23cf5d272b3ae90aa2f285a275a2bc985468c061471f73b58794d1d56ba4607c",
+    "imports": [],
+    "exports": []
+  },
+  {
+    "path": "playwright.config.ts",
+    "bytes": 558,
+    "sha256": "7413e905cc89e4a1dd46a9249ca14a72b291806129ba9af4b0875c32a2f073dc",
+    "imports": [
+      "@playwright/test"
+    ],
+    "exports": []
+  },
+  {
+    "path": "scripts/audit.ts",
+    "bytes": 701,
+    "sha256": "4bc3326753cd2eda09c88e907a4e76824781ac2e676c8835301521b5b785efbc",
+    "imports": [
+      "../server/store",
+      "../src/lib/domain",
+      "node:fs/promises"
+    ],
+    "exports": []
+  },
+  {
+    "path": "scripts/dev.ts",
+    "bytes": 417,
+    "sha256": "1f8ba33096e8aa84fb8b76fc940e268dd6d43ae3410013f06452d926d75226a0",
+    "imports": [
+      "node:child_process"
+    ],
+    "exports": []
+  },
+  {
+    "path": "scripts/e2e-prepare.ts",
+    "bytes": 277,
+    "sha256": "bb01cb087f42d7205eb6988f99b5f1f2a9dcae28886a741b0b2ef4b25f9b6407",
+    "imports": [
+      "node:fs/promises"
+    ],
+    "exports": []
+  },
+  {
+    "path": "scripts/readiness.ts",
+    "bytes": 969,
+    "sha256": "8f7d9b94dba001760cb545218b1dfddc840628b86bc167183f62770d0131fed2",
+    "imports": [
+      "node:assert/strict",
+      "../src/lib/domain"
+    ],
+    "exports": []
+  },
+  {
+    "path": "scripts/reconcile-financial.ts",
+    "bytes": 3144,
+    "sha256": "bfc9b2502c5fdc78fd8669c86a252eb8a368cf4f6ca9b4911974ba8025179175",
+    "imports": [
+      "node:fs/promises",
+      "node:path",
+      "node:url",
+      "node:child_process",
+      "node:util",
+      "../src/lib/import",
+      "../src/lib/domain",
+      "../src/lib/executive-ranking",
+      "../server/public-data"
+    ],
+    "exports": []
+  },
+  {
+    "path": "scripts/reconcile_financial.py",
+    "bytes": 10968,
+    "sha256": "883955c9b17eb70e6b3916b1dd5680ea5672b5bace559691132ef4aaa582dbc6",
+    "imports": [],
+    "exports": []
+  },
+  {
+    "path": "scripts/requirements-audit.txt",
+    "bytes": 16,
+    "sha256": "06d28d69e958deafb09f0a44fcae9b548f15e4debc14ebc39aad5f0934856fbf",
+    "imports": [],
+    "exports": []
+  },
+  {
+    "path": "scripts/seed.ts",
+    "bytes": 910,
+    "sha256": "45196d1ec7e6bb872cc6e0c198f254efa40911fe759529b21a5701206a27e99a",
+    "imports": [
+      "exceljs",
+      "../src/lib/domain",
+      "../server/store"
+    ],
+    "exports": []
+  },
+  {
+    "path": "server/app.ts",
+    "bytes": 9508,
+    "sha256": "7f8a384c99b73cd3c140aa600980276ed5f39ca36b53b52b7f21b9deec7273bc",
+    "imports": [
+      "express",
+      "helmet",
+      "express-rate-limit",
+      "node:crypto",
+      "zod",
+      "./store.js",
+      "../src/lib/domain.js",
+      "./reports.js",
+      "./public-data.js",
+      "./publication.js",
+      "../src/lib/audit.js"
+    ],
+    "exports": [
+      "createApp"
+    ]
+  },
+  {
+    "path": "server/local.ts",
+    "bytes": 351,
+    "sha256": "a46b44eac9d0270a38646abebb88b9b4274996d663e3ead4c99607cfe3fa5a00",
+    "imports": [
+      "./app",
+      "express",
+      "node:path"
+    ],
+    "exports": []
+  },
+  {
+    "path": "server/public-data.ts",
+    "bytes": 2254,
+    "sha256": "61eaebdc1e0866466dda4fc5dc5f757c880a1d0d4735ee8e3bfc65f98966118c",
+    "imports": [
+      "node:crypto",
+      "../src/lib/audit.js",
+      "../src/lib/domain.js"
+    ],
+    "exports": [
+      "publicDataset"
+    ]
+  },
+  {
+    "path": "server/publication.ts",
+    "bytes": 466,
+    "sha256": "c9a1b99473145c4933352f62461d25577e06d76c88b9200dfb57ea8f9bec6aa2",
+    "imports": [],
+    "exports": [
+      "publicationMetadata"
+    ]
+  },
+  {
+    "path": "server/reports.ts",
+    "bytes": 4171,
+    "sha256": "bc52941e3a28240769c17d8d57c35cd6c6b8e7c01e33a308a71a0ce87150aa3f",
+    "imports": [
+      "exceljs",
+      "pdfkit",
+      "../src/lib/domain.js",
+      "../src/lib/report-data.js",
+      "../src/lib/report-data.js"
+    ],
+    "exports": [
+      "excelReport",
+      "pdfReport",
+      "excelTemplate"
+    ]
+  },
+  {
+    "path": "server/store.ts",
+    "bytes": 5923,
+    "sha256": "4aa34069545106dd239ae0c9e92d35168697e221e5c12a4f257a382d754ce142",
+    "imports": [
+      "@supabase/supabase-js",
+      "node:fs",
+      "node:path",
+      "node:crypto",
+      "../src/lib/domain.js",
+      "../src/lib/audit.js"
+    ],
+    "exports": [
+      "supabaseAdmin",
+      "readDataset",
+      "readAuditVersions",
+      "readAuditVersion",
+      "saveDataset",
+      "FinancialVersionInfo",
+      "readFinancialVersions",
+      "readFinancialVersion"
+    ]
+  },
+  {
+    "path": "src/App.tsx",
+    "bytes": 21236,
+    "sha256": "c3b4584636167641b9c78cbc923556b0feacf8b0225b48051bf51b7ad283f608",
+    "imports": [
+      "react",
+      "recharts",
+      "lucide-react",
+      "./lib/api",
+      "./components/AuditPanel",
+      "./lib/downloads",
+      "./components/BaseManagement",
+      "./lib/domain",
+      "./components/MultiSelect",
+      "./lib/executive-ranking"
+    ],
+    "exports": []
+  },
+  {
+    "path": "src/components/AdminAccess.tsx",
+    "bytes": 3423,
+    "sha256": "51c7ab27738bd8c4156219b081fd325bb5f54b144521c4c4ee6fd7210147afa6",
+    "imports": [
+      "react",
+      "@supabase/supabase-js",
+      "../lib/api",
+      "../lib/admin-auth"
+    ],
+    "exports": [
+      "AdminAccess"
+    ]
+  },
+  {
+    "path": "src/components/AuditPanel.tsx",
+    "bytes": 9178,
+    "sha256": "ababb0f5e055ad52f412b7fb5a0e5141059413418c8c54db2360db3e8b659bed",
+    "imports": [
+      "react",
+      "../lib/domain",
+      "../lib/audit",
+      "../lib/audit-export",
+      "../lib/api"
+    ],
+    "exports": [
+      "AuditPanel"
+    ]
+  },
+  {
+    "path": "src/components/BaseManagement.tsx",
+    "bytes": 8605,
+    "sha256": "7dc9764f6e155b5efa60faf6237b317885138d920cfdbaadf0bb63b070cf76e9",
+    "imports": [
+      "react",
+      "lucide-react",
+      "../lib/import",
+      "../lib/downloads",
+      "../lib/api",
+      "./AdminAccess",
+      "../lib/domain"
+    ],
+    "exports": [
+      "BaseManagement"
+    ]
+  },
+  {
+    "path": "src/components/MultiSelect.tsx",
+    "bytes": 1351,
+    "sha256": "edaa48298de592e9a33a251f87918486d62446666513090dbf2a9a2ee4193a40",
+    "imports": [
+      "react",
+      "lucide-react"
+    ],
+    "exports": [
+      "MultiSelect"
+    ]
+  },
+  {
+    "path": "src/lib/admin-auth.ts",
+    "bytes": 1579,
+    "sha256": "ff46d62ed8042ee79c04fcf6a92e671970f88c03eaad97693740b9b51e60b70c",
+    "imports": [
+      "@supabase/supabase-js",
+      "./api"
+    ],
+    "exports": [
+      "AuthConfig",
+      "signInAdmin"
+    ]
+  },
+  {
+    "path": "src/lib/api.ts",
+    "bytes": 1196,
+    "sha256": "a23543efbbf10f9ee8ab010db30c57c6b954e2323c90ad43c7f4c628c922a21a",
+    "imports": [],
+    "exports": [
+      "request",
+      "AdminSession",
+      "adminResponse",
+      "adminRequest"
+    ]
+  },
+  {
+    "path": "src/lib/audit-export.ts",
+    "bytes": 2556,
+    "sha256": "7da08cadfe37ddc8b2188486af0b870864f5c548b2ccdbebb883bf748e5cb2f8",
+    "imports": [
+      "./domain.js",
+      "./audit.js"
+    ],
+    "exports": [
+      "auditWorkbook",
+      "downloadAudit"
+    ]
+  },
+  {
+    "path": "src/lib/audit-source.ts",
+    "bytes": 1270,
+    "sha256": "e553daf13b8884bbcc80d6cc7f5e6e5e8fa54308d448a38d7d45339f95227c8a",
+    "imports": [
+      "./domain.js"
+    ],
+    "exports": [
+      "AuditCell",
+      "AuditRecord",
+      "captureAuditRecords",
+      "financialAuditCells"
+    ]
+  },
+  {
+    "path": "src/lib/audit.ts",
+    "bytes": 5507,
+    "sha256": "38d94447a60563f7b903cb75ac52a5c1c7e3ab3d01494764648ccbef112fa83c",
+    "imports": [
+      "./domain.js",
+      "./audit-source.js"
+    ],
+    "exports": [
+      "normalizeAudit",
+      "AuditSeverity",
+      "severityLabel",
+      "auditRows",
+      "reviewCount",
+      "AuditFilters",
+      "auditCompany",
+      "filteredAuditRows",
+      "auditCategorySummary",
+      "auditSnapshot",
+      "AuditVersionInfo",
+      "currentAuditStatus"
+    ]
+  },
+  {
+    "path": "src/lib/domain.ts",
+    "bytes": 15923,
+    "sha256": "41c9fb54dd7018102ead1ad0ff75aabf0b8be3648b49666ad6272e49fb579ecc",
+    "imports": [
+      "./audit-source.js"
+    ],
+    "exports": [
+      "HEADERS",
+      "DIMENSIONS",
+      "Dimension",
+      "BANDS",
+      "COLORS",
+      "STATUSES",
+      "Status",
+      "FinancialRecord",
+      "Issue",
+      "Dataset",
+      "Filters",
+      "defaultFilters",
+      "keyOf",
+      "fmtMoney",
+      "fmtNumber",
+      "isoToday",
+      "day",
+      "daysBetween",
+      "addDays",
+      "monthEnd",
+      "bandOf",
+      "normalizeDate",
+      "moneyCents",
+      "validateBase",
+      "groupRecords",
+      "Surgery",
+      "snapshot",
+      "matchesDimensions",
+      "confirmedCutoff",
+      "period",
+      "summarize",
+      "ranking",
+      "movements",
+      "buildView"
+    ]
+  },
+  {
+    "path": "src/lib/downloads.ts",
+    "bytes": 3796,
+    "sha256": "2ffa8910dc2eee58c1179edeacf169d38a05e59126b277bb47ffe8403b521e1c",
+    "imports": [
+      "./api",
+      "./domain",
+      "./report-data"
+    ],
+    "exports": [
+      "downloadTemplate",
+      "downloadReport"
+    ]
+  },
+  {
+    "path": "src/lib/executive-ranking.ts",
+    "bytes": 1343,
+    "sha256": "49d4d580ce7eb0836dbda5be195b8ac1d505cec4f551a8aa694e6d3e576b8318",
+    "imports": [
+      "./domain"
+    ],
+    "exports": [
+      "weightedRetentionDays",
+      "executiveRanking",
+      "formatRankingPercent",
+      "formatWeightedDays"
+    ]
+  },
+  {
+    "path": "src/lib/import.ts",
+    "bytes": 1468,
+    "sha256": "cb0c26f1ec3811970c994956c5f64e1be8120d295bf54114386279f4ebea5d0d",
+    "imports": [
+      "./domain"
+    ],
+    "exports": [
+      "parseFile"
+    ]
+  },
+  {
+    "path": "src/lib/report-data.ts",
+    "bytes": 943,
+    "sha256": "d8e8864ca6669229e5c05ee373b13c3ae4b9a8b8e6be84f557262896723e1d2c",
+    "imports": [
+      "./domain.js"
+    ],
+    "exports": [
+      "reportRows"
+    ]
+  },
+  {
+    "path": "src/main.tsx",
+    "bytes": 213,
+    "sha256": "021982aade8d3f8bf37e85971320958a699c3bbf1856aab8fafe809ad1883b04",
+    "imports": [
+      "react",
+      "react-dom/client",
+      "./App"
+    ],
+    "exports": []
+  },
+  {
+    "path": "src/styles.css",
+    "bytes": 17721,
+    "sha256": "e5d794ba49027946037e3d79bcf81287af5bb1bdc4363337124c7cedc20d7cea",
+    "imports": [],
+    "exports": []
+  },
+  {
+    "path": "supabase/migrations/001_retention.sql",
+    "bytes": 2060,
+    "sha256": "1bcc03308601e1f98ea5b172925fa85dbbb93d3235e681918175511691c207d5",
+    "imports": [],
+    "exports": []
+  },
+  {
+    "path": "supabase/migrations/002_retention_audit_versions.sql",
+    "bytes": 3625,
+    "sha256": "3ec97de4d8872404471ff3a8ede8d376883ed768774d834edddd0746a582065a",
+    "imports": [],
+    "exports": []
+  },
+  {
+    "path": "supabase/migrations/003_retention_financial_versions.sql",
+    "bytes": 2502,
+    "sha256": "0cba26a07614cb2dd14c8cdac0486610b0fbcb6035b092dfb544db5e4152c117",
+    "imports": [],
+    "exports": []
+  },
+  {
+    "path": "tests/admin-integration.test.ts",
+    "bytes": 12151,
+    "sha256": "341bcb8a4e8684a19ed724bf68c582f9941de16bba30b58b6cf55b3ecddb5b4b",
+    "imports": [
+      "vitest",
+      "node:http",
+      "node:events",
+      "@supabase/supabase-js",
+      "../server/app",
+      "../src/lib/admin-auth",
+      "../src/lib/api",
+      "../src/lib/domain"
+    ],
+    "exports": []
+  },
+  {
+    "path": "tests/api.test.ts",
+    "bytes": 2557,
+    "sha256": "39f83f9fba7ad98a0f07bd7662350b4478139b885bfdd1503e74eb40d7ece5f7",
+    "imports": [
+      "vitest",
+      "../server/app",
+      "../src/lib/domain",
+      "node:fs/promises",
+      "node:os",
+      "node:http"
+    ],
+    "exports": []
+  },
+  {
+    "path": "tests/audit-details.test.ts",
+    "bytes": 5556,
+    "sha256": "b6d0a6db3fcb317da0ccbb97ba03254c3907b4c4a73616ea9ec9861b52d3588d",
+    "imports": [
+      "vitest",
+      "exceljs",
+      "../src/lib/domain",
+      "../server/public-data",
+      "../src/lib/audit",
+      "../src/lib/audit-export"
+    ],
+    "exports": []
+  },
+  {
+    "path": "tests/audit-history-migration.test.ts",
+    "bytes": 4142,
+    "sha256": "539681eb605c291ade20cebf5ec563fed0e141c0fa134ad1643f7d0ec6c6fe4b",
+    "imports": [
+      "vitest",
+      "@electric-sql/pglite",
+      "node:fs/promises",
+      "../src/lib/domain"
+    ],
+    "exports": []
+  },
+  {
+    "path": "tests/audit.test.ts",
+    "bytes": 4218,
+    "sha256": "a3bef16760f0e4f54100bf9033da1f9bc6a003b8b20ee140900797c8f2dea50e",
+    "imports": [
+      "vitest",
+      "exceljs",
+      "../src/lib/domain",
+      "../src/lib/audit",
+      "../src/lib/audit-export",
+      "../server/public-data"
+    ],
+    "exports": []
+  },
+  {
+    "path": "tests/domain.test.ts",
+    "bytes": 8413,
+    "sha256": "5937f60acaba43e6ddeab87f1abe6a3d570fc9ca8804d51863695b868619c60d",
+    "imports": [
+      "vitest",
+      "../src/lib/domain"
+    ],
+    "exports": []
+  },
+  {
+    "path": "tests/e2e/admin.spec.ts",
+    "bytes": 9921,
+    "sha256": "b2c77221b9c35406eda20b23cef58e77c2ab5658286f663cefe8e555da55388f",
+    "imports": [
+      "@playwright/test",
+      "../../src/lib/domain",
+      "../../src/lib/audit",
+      "../../server/public-data"
+    ],
+    "exports": []
+  },
+  {
+    "path": "tests/e2e/audit.spec.ts",
+    "bytes": 7662,
+    "sha256": "cfb6df328dd39fa5c3e27b850269e3c17d0865e8e32c0fdad9c07c5d01aaa812",
+    "imports": [
+      "@playwright/test",
+      "exceljs",
+      "../../src/lib/domain",
+      "../../src/lib/audit",
+      "../../server/public-data"
+    ],
+    "exports": []
+  },
+  {
+    "path": "tests/e2e/dashboard.spec.ts",
+    "bytes": 11019,
+    "sha256": "4848f0c6c5363e9fe8ff0b58ff873372a38fb5f054823a051d5351065cc924a5",
+    "imports": [
+      "@playwright/test",
+      "exceljs",
+      "../../src/lib/domain"
+    ],
+    "exports": []
+  },
+  {
+    "path": "tests/e2e/reference.spec.ts",
+    "bytes": 8661,
+    "sha256": "0e0b33f9e311b4f384a2c197d82f50f5e9f9517da78bdf94134d804baeafef43",
+    "imports": [
+      "@playwright/test",
+      "node:fs/promises",
+      "../../src/lib/import",
+      "../../src/lib/domain",
+      "../../server/public-data"
+    ],
+    "exports": []
+  },
+  {
+    "path": "tests/e2e/sync-audit.spec.ts",
+    "bytes": 8152,
+    "sha256": "87ad7683bc34584471ef9479353c47fb0c5098d409fd003ec063685d148ba620",
+    "imports": [
+      "@playwright/test",
+      "exceljs",
+      "../../src/lib/domain",
+      "../../server/public-data",
+      "../../src/lib/audit"
+    ],
+    "exports": []
+  },
+  {
+    "path": "tests/e2e/weekly.spec.ts",
+    "bytes": 5124,
+    "sha256": "dd30fcb4610113a1234f2d3ef55bd8ccc16ab8e05fed50d4292f38d78e734c65",
+    "imports": [
+      "@playwright/test",
+      "../../src/lib/domain",
+      "../../server/public-data",
+      "../../server/publication"
+    ],
+    "exports": []
+  },
+  {
+    "path": "tests/executive-ranking.test.ts",
+    "bytes": 4427,
+    "sha256": "e9c3bc64551a996d8d428b552c15eda458d947b1424e57caca117aad052f1b8d",
+    "imports": [
+      "vitest",
+      "../src/lib/domain",
+      "../src/lib/executive-ranking"
+    ],
+    "exports": []
+  },
+  {
+    "path": "tests/financial-reconciliation.test.ts",
+    "bytes": 4624,
+    "sha256": "0d72184ab82b9efc75d215b974a698315a190bd17c1c19c1addd7d06c34022af",
+    "imports": [
+      "vitest",
+      "node:fs/promises",
+      "node:os",
+      "node:path",
+      "node:child_process",
+      "node:util",
+      "exceljs",
+      "../src/lib/domain"
+    ],
+    "exports": []
+  },
+  {
+    "path": "tests/local-audit-history.test.ts",
+    "bytes": 1296,
+    "sha256": "26ca6772a572e056455f39384bb5312aa718c432c09a191e60647641b5215892",
+    "imports": [
+      "vitest",
+      "node:fs/promises",
+      "node:os",
+      "../src/lib/domain",
+      "../server/store"
+    ],
+    "exports": []
+  },
+  {
+    "path": "tests/official-base.test.ts",
+    "bytes": 918,
+    "sha256": "387733d181c76e0c3a0b6ff0cda746b3ab33afe40bfbc531cf61e941084d294f",
+    "imports": [
+      "vitest",
+      "../server/store",
+      "../src/lib/domain",
+      "../docs/validacao-independente.json"
+    ],
+    "exports": []
+  },
+  {
+    "path": "tests/official-identifiers.test.ts",
+    "bytes": 1907,
+    "sha256": "58b82a3c468a6f2cc635e944773cb3fad79f1e160022499cdf02595babe7a20b",
+    "imports": [
+      "node:util",
+      "vitest",
+      "exceljs",
+      "../server/store",
+      "../src/lib/domain",
+      "../server/public-data",
+      "../src/lib/audit"
+    ],
+    "exports": []
+  },
+  {
+    "path": "tests/official-ranking.test.ts",
+    "bytes": 956,
+    "sha256": "bb128ca46de5f2bff691554551eeb1c850df550a8a6ff4017c8088ad775982b7",
+    "imports": [
+      "vitest",
+      "../server/store",
+      "../src/lib/domain",
+      "../src/lib/executive-ranking",
+      "../docs/validacao-ranking-independente.json"
+    ],
+    "exports": []
+  },
+  {
+    "path": "tests/permissions.test.ts",
+    "bytes": 1910,
+    "sha256": "26627baa4caa219dde1d31f28eadce60c33ec439fc276f7fc4711b22e1329530",
+    "imports": [
+      "vitest",
+      "../server/app",
+      "../server/store",
+      "../src/lib/domain",
+      "node:http"
+    ],
+    "exports": []
+  },
+  {
+    "path": "tests/public-data.test.ts",
+    "bytes": 3350,
+    "sha256": "ce9ac366ff3fc9551d6b55c8e6a29fada5686352a429bcd451be6adf100fa3fa",
+    "imports": [
+      "vitest",
+      "../src/lib/domain",
+      "../server/public-data"
+    ],
+    "exports": []
+  },
+  {
+    "path": "tests/published-sync.test.ts",
+    "bytes": 2081,
+    "sha256": "b6d82b8c24161ae4234e08a0855a777750a5b71e5f4c577ad1b36466f9d0bd73",
+    "imports": [
+      "vitest",
+      "../server/app",
+      "../server/store",
+      "../src/lib/domain"
+    ],
+    "exports": []
+  },
+  {
+    "path": "tests/reference-api.test.ts",
+    "bytes": 2373,
+    "sha256": "f70ba044b73ee68ed93016c07bca9613f8f542673d320ca7c834fd19cbf0dfbb",
+    "imports": [
+      "vitest",
+      "node:http",
+      "exceljs",
+      "../server/app",
+      "../server/store",
+      "../src/lib/domain"
+    ],
+    "exports": []
+  },
+  {
+    "path": "tests/reference-date.test.ts",
+    "bytes": 5245,
+    "sha256": "2cae1faa22de425a0b6b91c84cb41b1cac9eaaf8fb02f5958e0993cce0bbb838",
+    "imports": [
+      "vitest",
+      "node:fs/promises",
+      "../src/lib/import",
+      "../src/lib/domain",
+      "../server/public-data"
+    ],
+    "exports": []
+  },
+  {
+    "path": "tests/reports.test.ts",
+    "bytes": 1224,
+    "sha256": "ac0f516aadab565e6f75b65fb3e518a0c91ee829f145b6cae7c4d99f79f66057",
+    "imports": [
+      "vitest",
+      "exceljs",
+      "../server/reports",
+      "../src/lib/domain"
+    ],
+    "exports": []
+  },
+  {
+    "path": "tests/server-runtime.test.ts",
+    "bytes": 3238,
+    "sha256": "8dc75920af353b8a5c8e4a9afb8adfedd9e6ffa8c7773f379d1a801c33e289f7",
+    "imports": [
+      "vitest",
+      "node:child_process",
+      "node:util",
+      "node:fs/promises",
+      "node:os",
+      "node:path",
+      "node:url",
+      "node:http",
+      "node:events"
+    ],
+    "exports": []
+  },
+  {
+    "path": "tests/weekly-migration.test.ts",
+    "bytes": 3496,
+    "sha256": "956a02d8c920b661bed468de6c289dce6b8de4010014207cda878d6354d64413",
+    "imports": [
+      "vitest",
+      "@electric-sql/pglite",
+      "node:fs/promises",
+      "../src/lib/domain",
+      "../server/publication"
+    ],
+    "exports": []
+  },
+  {
+    "path": "tests/weekly-publication.test.ts",
+    "bytes": 4520,
+    "sha256": "2778e87ac3f2b2909385a387d0c9732dc7867de75ad750b3f055b1f3f42aca54",
+    "imports": [
+      "vitest",
+      "node:fs/promises",
+      "node:os",
+      "../server/app",
+      "../server/publication",
+      "../src/lib/domain"
+    ],
+    "exports": []
+  },
+  {
+    "path": "tsconfig.json",
+    "bytes": 362,
+    "sha256": "fcc1b1df06bd8e050230a53c0dedf43cbe24c708ab3407eb7a5549c466c9129c",
+    "imports": [],
+    "exports": []
+  },
+  {
+    "path": "tsconfig.server.json",
+    "bytes": 180,
+    "sha256": "a0ad4a0090a09c97c76c7ba3ca81c84c98b791e7105708b50dba2ddda970c557",
+    "imports": [],
+    "exports": []
+  },
+  {
+    "path": "vercel.json",
+    "bytes": 406,
+    "sha256": "df587ad599d33d6ae0dff10bcc7e038c16ac62b2c4f87e422321c121888e730e",
+    "imports": [],
+    "exports": []
+  },
+  {
+    "path": "vite.config.ts",
+    "bytes": 401,
+    "sha256": "035b90834230f89955cab28c6be9e9dbf9e53bbc517cd14a57f927b7c05f3245",
+    "imports": [
+      "vite",
+      "@vitejs/plugin-react"
+    ],
+    "exports": []
+  },
+  {
+    "path": "vitest.config.ts",
+    "bytes": 136,
+    "sha256": "43f1d1bf05521e840dc9884c6da296af5ec6e0755ef9bfdc1a8bd725eaa2719a",
+    "imports": [
+      "vitest/config"
+    ],
+    "exports": []
+  }
+]
