@@ -6,7 +6,11 @@ Branch de trabalho: `feat/finalizacao-dashboard`. Esta entrega prepara código p
 
 O responsável aprovou preservar os dois registros do título 87848/01 e, posteriormente, confirmou que as faixas das abas de origem devem prevalecer. Essa decisão substitui a reclassificação anterior por vencimento. Recebido permanece YTD, pela data efetiva, de janeiro até 19/10/2026. Não se reconstruem saldos de meses sem posição publicada.
 
-O arquivo disponível é o anexo original `Faturamento A Vencer, Vencido e Faturado.xlsx`, SHA-256 `4632fc2006fe6e0dd9c5ea33e7f0abb77f1737da88900233e3c5f4b76d00107b`. O arquivo `Faturamento A Vencer, Vencido e Faturado(2).xlsx` mencionado na solicitação **não foi disponibilizado neste ambiente**. Não há afirmação de equivalência entre eles. A validação final dessa nova versão depende de recebê-la e executar a auditoria novamente.
+O responsável esclareceu que o nome com sufixo `(2)` se referia à mesma base e reenviou a planilha corrigida em 20/10/2026. O arquivo corrigido `Faturamento A Vencer, Vencido e Faturado.xlsx` tem SHA-256 `95c06103c0102d71d1aae3f40cad83ba721de7ac0f32f435d077ec934be554d1`. A linha 461 de A Vencer foi conferida: nominal e saldo de R$ 4.300,00, conforme esclarecimento do responsável.
+
+A comparação de todos os 5.099 registros com o anexo original (SHA-256 `4632fc2006fe6e0dd9c5ea33e7f0abb77f1737da88900233e3c5f4b76d00107b`) confirmou igualdade de clientes, títulos, parcelas, representantes, faixas de origem, datas e valores. Apenas o campo derivado de dias difere em 2.348 registros. A assinatura financeira continua `f7c0802b7eb674b92c1bec37893984f7108b49f16a27c28ab84a228291a61480`, já abrangida pela regra restrita existente. Não foi alterado o código de cálculo, de validação ou de aprovação para aceitar o arquivo corrigido.
+
+A versão intermediária reenviada com nominal de R$ 4.301,00 não correspondia à aprovação e continuou bloqueada. Ela não foi publicada nem usada para substituir a fonte validada. A pendência de recebimento/conferência da planilha foi resolvida pelo novo envio corrigido.
 
 ## Conciliação executada no anexo disponível
 
@@ -19,7 +23,7 @@ O arquivo disponível é o anexo original `Faturamento A Vencer, Vencido e Fatur
 
 Os valores são calculados nas células financeiras e somados com precisão decimal. Os testes também confrontam todas as linhas, títulos, faixas e valores diretamente com as células. Nenhum total é usado para preencher resultados do serviço. As colunas de saldo são as posições 14 nas bases abertas e a posição 15 contém o recebido. Cabeçalhos distintos continuam validados pelo importador.
 
-Auditoria atual: 25 `BAND_DATE_CONFLICT`, 17 `DAYS_MISMATCH`, uma `OPEN_AND_RECEIVED`, uma `POSSIBLE_DOUBLE_COUNT` e uma `CLIENT_NAME_ONLY`. Nenhuma linha é excluída. A divergência de datas continua localizável por aba/linha. Há zero bloqueios no anexo conferido sob as duas decisões expressas; advertências exigem revisão do administrador antes da confirmação.
+Auditoria atual: 25 `BAND_DATE_CONFLICT`, 2.348 `DAYS_MISMATCH`, uma `OPEN_AND_RECEIVED`, uma `POSSIBLE_DOUBLE_COUNT` e uma `CLIENT_NAME_ONLY`. Nenhuma linha é excluída. A divergência de datas continua localizável por aba/linha. Há zero bloqueios no anexo conferido sob as duas decisões expressas; advertências exigem revisão do administrador antes da confirmação.
 
 ## Exceção restrita e histórico
 
@@ -46,19 +50,19 @@ As transações e consultas foram executadas em PGlite, PostgreSQL embarcado. Is
 ## Validação reproduzível
 
 ```sh
-npm test
+OFFICIAL_XLSX=.local/official-corrected.xlsx npm test
 npm run build
-npx --no-install tsx tests/final-dashboard-browser.ts
-npm run audit:official -- .local/official.xlsx 2026-10-19 .local/final-audit.private.json
+OFFICIAL_XLSX=.local/official-corrected.xlsx npx --no-install tsx tests/final-dashboard-browser.ts
+npm run audit:official -- .local/official-corrected.xlsx 2026-10-19 .local/final-audit.private.json
 ```
 
 O teste Chromium usa `/usr/bin/chromium` já disponível e banco local isolado; não lê `DATABASE_URL`. A planilha e capturas permanecem privadas/ignoradas. Nenhum programa ou dependência adicional foi instalado nesta entrega.
 
-Resultado: 53 testes automatizados aprovados, nenhum ignorado nesta máquina; build TypeScript/Vite aprovado; Chromium aprovado em 1280 e 390 px. A suíte inclui importação HTTP autenticada da fonte disponível, conferência dos 5.099 registros, exceção revisada, bloqueios futuros/erros adicionais, publicação transacional local, histórico, YTD, filtros combinados, autorização e negação de acesso público. A interface foi exercitada com login, revisão, confirmação local, quatro KPIs, dois gráficos, rankings, detalhamento, filtros e logout. O build emite advertência de bundle JavaScript maior que 500 kB; não impede compilação.
+Resultado na planilha corrigida: 53 testes automatizados aprovados, nenhum ignorado nesta máquina; build TypeScript/Vite aprovado; Chromium aprovado em 1280 e 390 px. A suíte inclui importação HTTP autenticada da fonte disponível, conferência dos 5.099 registros, exceção revisada, bloqueios futuros/erros adicionais, publicação transacional local, histórico, YTD, filtros combinados, autorização e negação de acesso público. A interface foi exercitada com login, revisão, confirmação local, quatro KPIs, dois gráficos, rankings, detalhamento, filtros e logout. O build emite advertência de bundle JavaScript maior que 500 kB; não impede compilação.
 
 ## Próximos passos após aprovação
 
-1. Disponibilizar e auditar o arquivo oficial com sufixo `(2)`. Diferenças financeiras não herdam a revisão automaticamente e devem ser apresentadas ao responsável.
+1. Conferência do arquivo corrigido concluída: 5.099 registros, os quatro totais preservados, zero erros bloqueantes e advertências mantidas. Nenhuma publicação de produção foi realizada.
 2. Revisar a PR e autorizar separadamente implantação e operação em produção. Não houve acesso de escrita ao Neon remoto, deploy ou merge.
 3. Após implantação autorizada, entrar com o administrador existente e reimportar a fonte conferida, preservando importações antigas. Rever as advertências e a data; confirmar a publicação pela interface somente quando autorizada. O dashboard passa a consultar a versão publicada normalmente.
 4. Para uma planilha corrigida posteriormente, usar o mesmo fluxo normal; não há modo provisório para desligar. Qualquer nova inconsistência bloqueante exige correção/revisão antes da publicação. A liberação pública depende de autorização específica independente.

@@ -2,7 +2,7 @@
 
 React/TypeScript/Vite com API Express para Vercel e Neon PostgreSQL. Implementação em branch `feat/limite-global-backend`, sem Supabase. A estrutura e os componentes visuais compatíveis foram preservados a partir do projeto de Retenção de Faturamento.
 
-A posição analisada é **19/10/2026**. Em 20/10/2026 o responsável aprovou preservar as faixas das abas de origem e os dois registros do título 87848/01. A decisão é aplicada somente à fonte financeira conferida, mantendo a severidade original na auditoria. Outros erros continuam bloqueantes. Consulte [a entrega e as limitações atuais](docs/FINALIZATION.md). A planilha com sufixo `(2)` mencionada na finalização ainda precisa ser fornecida para conferência independente.
+A posição analisada é **19/10/2026**. Em 20/10/2026 o responsável aprovou preservar as faixas das abas de origem e os dois registros do título 87848/01. A decisão é aplicada somente à fonte financeira conferida, mantendo a severidade original na auditoria. Outros erros continuam bloqueantes. Consulte [a entrega e as limitações atuais](docs/FINALIZATION.md). O responsável esclareceu a identificação da planilha e reenviou o arquivo corrigido, conferido com os mesmos 5.099 registros financeiros e totais. As 2.348 divergências no campo derivado de dias permanecem auditadas.
 
 Esta branch não executa deploy automático; nenhuma alteração no Neon remoto, publicação financeira de produção ou merge foi realizada.
 
@@ -53,7 +53,7 @@ Consulte [auditoria financeira](docs/FINANCIAL-AUDIT.md), [arquitetura e modelo]
 
 ## Pendências concretas
 
-- Conferir o arquivo `Faturamento A Vencer, Vencido e Faturado(2).xlsx`, ausente nesta máquina. Os testes financeiros executados usam o anexo original disponível, sem sufixo.
+- Conferência da planilha corrigida concluída; o arquivo privado está em `.local/official-corrected.xlsx`. Para repetir os testes com ele, use `OFFICIAL_XLSX=.local/official-corrected.xlsx npm test`. Ambos os anexos têm identidades exatas verificadas nos testes; fontes diferentes exigem nova auditoria.
 - Validar o fluxo em ambiente Vercel/Neon autorizado antes da implantação. A disponibilidade remota foi informada pelo administrador, não retestada por esta alteração.
 - Após atualização autorizada, reimportar o arquivo conferido: importações antigas e seu histórico permanecem intactos. Rever advertências e confirmar a publicação pela interface somente com autorização.
 - Eventual acesso público exige autorização separada. `PUBLIC_FINANCIAL_DATA_AUTHORIZED` continua `false`.

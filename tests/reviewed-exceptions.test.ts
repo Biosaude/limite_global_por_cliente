@@ -1,5 +1,6 @@
 import {describe,it,expect,beforeAll} from 'vitest';
 import {readFile,access} from 'node:fs/promises';
+import {officialExpectation} from './official-sources.js';
 import ExcelJS from 'exceljs';
 import {parseWorkbook,SHEETS,reconciliation} from '../server/import.js';
 import {applyReviewedExceptions,financialFingerprint} from '../server/reviewed-exceptions.js';
@@ -21,7 +22,7 @@ describe.skipIf(!available)('fonte real conferida e decisão do responsável',()
  it('transforma somente a ocorrência conferida em advertência com severidade e decisão rastreáveis',()=>{
   const issue=ds.issues.find(i=>i.code==='POSSIBLE_DOUBLE_COUNT')!;
   expect(issue).toMatchObject({severity:'warning',originalSeverity:'blocking',sheet:SHEETS.upcoming,row:461,related:[{sheet:SHEETS.received,row:1291}],review:{id:'BIOS-2026-10-20-87848-01',decidedAt:'2026-10-20',appliedSourceSha256:ds.sha256}});
-  expect(ds.issues.filter(i=>i.review?.id==='BIOS-2026-10-20-SOURCE-BANDS')).toHaveLength(25);expect(ds.issues.filter(i=>i.code==='DAYS_MISMATCH')).toHaveLength(17);
+  expect(ds.issues.filter(i=>i.review?.id==='BIOS-2026-10-20-SOURCE-BANDS')).toHaveLength(25);expect(ds.issues.filter(i=>i.code==='DAYS_MISMATCH')).toHaveLength(officialExpectation(ds.sha256).daysMismatch);
   expect(ds.rows.filter(r=>r.title==='87848').map(r=>r.amount)).toEqual(['4300.00','4300.00']);
  });
  it('confere todas as linhas e somas diretamente nas células Excel, sem usar totais fixados para montar resultados',async()=>{
