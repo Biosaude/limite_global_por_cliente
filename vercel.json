@@ -45,7 +45,6 @@
   ],
   "git": {
     "deploymentEnabled": {
-      "feat/limite-global-backend": false,
       "feat/finalizacao-dashboard": false
     }
   }
