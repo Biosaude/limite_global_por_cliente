@@ -2,7 +2,9 @@
 
 React/TypeScript/Vite com API Express para Vercel e Neon PostgreSQL. Implementação em branch `feat/limite-global-backend`, sem Supabase. A estrutura e os componentes visuais compatíveis foram preservados a partir do projeto de Retenção de Faturamento.
 
-A posição oficial analisada é **19/10/2026**. A reclassificação por vencimento foi autorizada: Vencido inclui o próprio dia. A planilha permanece **bloqueada para publicação financeira** pelo título 87848/01, a conferir com o financeiro. Não foi realizado deploy, merge, gravação remota ou aplicação de migration no Neon.
+A posição analisada é **19/10/2026**. Em 20/10/2026 o responsável aprovou preservar as faixas das abas de origem e os dois registros do título 87848/01. A decisão é aplicada somente à fonte financeira conferida, mantendo a severidade original na auditoria. Outros erros continuam bloqueantes. Consulte [a entrega e as limitações atuais](docs/FINALIZATION.md). O responsável esclareceu a identificação da planilha e reenviou o arquivo corrigido, conferido com os mesmos 5.099 registros financeiros e totais. As 2.348 divergências no campo derivado de dias permanecem auditadas.
+
+Esta branch não executa deploy automático; nenhuma alteração no Neon remoto, publicação financeira de produção ou merge foi realizada.
 
 ## Desenvolvimento
 
@@ -39,7 +41,7 @@ Nenhuma política pública é ativada automaticamente. Convites, recuperação d
 ```sh
 npm test
 npm run build
-npm run audit:official -- .local/official.xlsx 2026-10-19 docs/official-audit.json
+npm run audit:official -- .local/official.xlsx 2026-10-19  .local/final-audit.private.json
 python scripts/independent-audit.py .local/official.xlsx
 ```
 
@@ -51,7 +53,8 @@ Consulte [auditoria financeira](docs/FINANCIAL-AUDIT.md), [arquitetura e modelo]
 
 ## Pendências concretas
 
-- Conciliação financeira do título **87848/01**, A Vencer linha 461 e Recebido linha 1291: R$ 4.300,00 em cada, nominal R$ 4.300,00. Ambas as linhas preservadas; nenhuma dedução automática. Corrigir a origem e reimportar após decisão do financeiro.
-- Configurar acesso seguro ao Neon, inspecionar o schema real, aplicar a migration aditiva revisada, criar admin e validar o fluxo em Preview real.
-- Autorizar expressamente eventual exposição pública de nomes/valores. O bloqueio de acesso é padrão.
-- PR/deploy/merge não realizados. O remoto estava sem commits e sem `main`; não foi criada uma base artificial na `main` para abrir PR.
+- Conferência da planilha corrigida concluída; o arquivo privado está em `.local/official-corrected.xlsx`. Para repetir os testes com ele, use `OFFICIAL_XLSX=.local/official-corrected.xlsx npm test`. Ambos os anexos têm identidades exatas verificadas nos testes; fontes diferentes exigem nova auditoria.
+- Validar o fluxo em ambiente Vercel/Neon autorizado antes da implantação. A disponibilidade remota foi informada pelo administrador, não retestada por esta alteração.
+- Após atualização autorizada, reimportar o arquivo conferido: importações antigas e seu histórico permanecem intactos. Rever advertências e confirmar a publicação pela interface somente com autorização.
+- Eventual acesso público exige autorização separada. `PUBLIC_FINANCIAL_DATA_AUTHORIZED` continua `false`.
+- O remoto possui somente `feat/limite-global-backend`, sua branch padrão, no commit inicial `892d025`. A revisão desta alteração usa essa base existente; criar `main` exige resolver a estratégia de histórico separadamente.

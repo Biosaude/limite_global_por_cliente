@@ -27,18 +27,24 @@ export function createApp(options:{db?:Database;origin?:string;publicAuthorized?
  function administrator(_req:Request,res:Response,next:NextFunction){if((res.locals.identity as Identity).role!=='admin')return res.status(403).json({error:'ADMIN_REQUIRED'});next();}
  app.get('/api/admin/history',administrator,async(_req,res)=>res.json({currentId:await repo().current(),versions:await repo().history()}));
  app.get('/api/admin/publications/:id/audit',administrator,async(req,res)=>res.json(reconciliation(await repo().publicationDataset(z.string().uuid().parse(req.params.id)))));
+ app.get('/api/admin/imports',administrator,async(_req,res)=>res.json(await repo().pendingImports()));
  app.get('/api/admin/imports/:id',administrator,async(req,res)=>res.json(reconciliation(await repo().getImport(z.string().uuid().parse(req.params.id)))));
  // Binary body keeps upload below the Vercel request limit; no client-side financial payload is trusted.
  app.post('/api/admin/imports',administrator,express.raw({type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',limit:'4mb'}),async(req,res)=>{
   if(!Buffer.isBuffer(req.body))throw new DomainError('XLSX_BODY_REQUIRED',415);
   const reference=date(z.string().parse(req.query.referenceDate));
-  const policy=z.object({reclassify:z.literal('true').default('true'),sameDay:z.literal('overdue').default('overdue')}).parse(req.query);
+  const policy=z.object({reclassify:z.literal('false').default('false'),sameDay:z.literal('overdue').default('overdue')}).parse(req.query);
   let filename:string;try{filename=decodeURIComponent(req.get('x-file-name')??'upload.xlsx');}catch{throw new DomainError('INVALID_FILE_NAME');}
   filename=z.string().min(1).max(200).regex(/^[^\x00-\x1f]+\.xlsx$/i).parse(filename);
-  const ds=await parseWorkbook(req.body,reference,{reclassifyByDueDate:policy.reclassify==='true',sameDay:policy.sameDay},filename);res.status(201).json(await repo().preview(ds,(res.locals.identity as Identity).id));
+  const ds=await parseWorkbook(req.body,reference,{reclassifyByDueDate:false,sameDay:policy.sameDay},filename);res.status(201).json(await repo().preview(ds,(res.locals.identity as Identity).id));
  });
  app.post('/api/admin/publications',administrator,express.json({limit:'8kb'}),async(req,res)=>{const b=z.object({importId:z.string().uuid(),expectedCurrentId:z.string().uuid().nullable(),reviewedAudit:z.literal(true)}).strict().parse(req.body);res.status(201).json(await repo().publish(b.importId,(res.locals.identity as Identity).id,b.expectedCurrentId,b.reviewedAudit));});
- const dashboard=async(req:Request,res:Response)=>{const f=filters.parse(req.query);const result=await repo().dashboard({year:f.year,month:f.month,clients:f.clients?.split(',').filter(Boolean),representatives:f.representatives?z.array(z.string().max(250)).max(1000).parse(JSON.parse(f.representatives)):undefined},f.version);if(!result)return res.status(404).json({error:'NO_HISTORICAL_POSITION'});return res.json(result);};
+ const dashboard=async(req:Request,res:Response)=>{const f=filters.parse(req.query);const result=await repo().dashboard({year:f.year,month:f.month,clients:f.clients?.split(',').filter(Boolean),representatives:f.representatives?z.array(z.string().max(250)).max(1000).parse(JSON.parse(f.representatives)):undefined},f.version);if(!result)return res.status(404).json({error:'NO_HISTORICAL_POSITION'});const {representatives,...publicResult}=result;return res.json(req.path.startsWith('/api/public/')?publicResult:result);};
+ app.get('/api/admin/records',administrator,async(req,res)=>{
+  const f=filters.extend({page:z.coerce.number().int().min(1).max(10000).default(1),pageSize:z.coerce.number().int().min(1).max(100).default(50)}).parse(req.query);
+  const result=await repo().records({year:f.year,month:f.month,clients:f.clients?.split(',').filter(Boolean),representatives:f.representatives?z.array(z.string().max(250)).max(1000).parse(JSON.parse(f.representatives)):undefined},f.version,f.page,f.pageSize);
+  if(!result)return res.status(404).json({error:'NO_HISTORICAL_POSITION'});res.json(result);
+ });
  app.get('/api/admin/dashboard',dashboard);
  app.use('/api/public',(_req,res,next)=>{if(!(options.publicAuthorized?.()??process.env.PUBLIC_FINANCIAL_DATA_AUTHORIZED==='true'))return res.status(403).json({error:'PUBLIC_FINANCIAL_DISCLOSURE_NOT_AUTHORIZED'});next();});
  app.get('/api/public/dashboard',dashboard);
