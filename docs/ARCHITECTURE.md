@@ -1,5 +1,7 @@
 # Arquitetura e diagnóstico da referência
 
+> Registro histórico da implementação inicial. As decisões financeiras e a validação de 20/10/2026 estão em [FINALIZATION.md](FINALIZATION.md); a classificação por vencimento foi substituída pela preservação das abas de origem.
+
 Foram inventariados os 87 arquivos do ZIP original, com hashes, imports e símbolos exportados em `reference-inventory.json`. O ZIP e sua cópia extraída permanecem fora do novo checkout. Não houve acesso ao Supabase original nem modificação do projeto de referência.
 
 ## Referência encontrada

@@ -1,5 +1,7 @@
 # Auditoria da planilha oficial
 
+> Registro histórico da implementação inicial. As decisões financeiras e a validação de 20/10/2026 estão em [FINALIZATION.md](FINALIZATION.md); a classificação por vencimento foi substituída pela preservação das abas de origem.
+
 Arquivo: `Faturamento A Vencer, Vencido e Faturado.xlsx`.
 SHA-256: `4632fc2006fe6e0dd9c5ea33e7f0abb77f1737da88900233e3c5f4b76d00107b`.
 Posição confirmada pelo administrador: **19/10/2026**. Todas as 5.099 linhas de dados e 3 abas foram examinadas, sem amostragem. Cabeçalhos estão na linha 1; a origem das linhas é preservada com numeração Excel, a partir de 2.

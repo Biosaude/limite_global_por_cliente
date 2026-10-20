@@ -2,6 +2,7 @@ import ExcelJS from 'exceljs';
 import {basename} from 'node:path';
 import yauzl from 'yauzl';
 import Decimal from 'decimal.js';
+import {applyReviewedExceptions} from './reviewed-exceptions.js';
 import {consolidate,date,dayDiff,money,sum,hash,normalize,type Dataset,type Band,type FinancialRow,type Issue} from './financial.js';
 export const HEADERS:Record<Band,string[]>={
  upcoming:['Nome cliente','Duplicata','Parcela','Dt.emissao','Dt.vencimento','Dias para vencer','Dt.cirurgia','Paciente','Nome hospital','Descricao do plano de saude','Nome do medico','Vr.duplicata','Vr.desconto','Vr.aberto','Descricao','Descricao','Nome representante','Numero do titulo completo'],
@@ -19,7 +20,7 @@ async function inspectZip(buffer:Buffer){
  }));
 }
 function text(v:unknown){if(typeof v!=='string'&&typeof v!=='number')throw Error('INVALID_IDENTIFIER');const s=normalize(String(v));if(!s||s.length>250)throw Error('INVALID_IDENTIFIER');return s;}
-export async function parseWorkbook(buffer:Buffer,reference:string,policy:Dataset['policy']={reclassifyByDueDate:true,sameDay:'overdue'},sourceFilename='upload.xlsx'):Promise<Dataset>{
+export async function parseWorkbook(buffer:Buffer,reference:string,policy:Dataset['policy']={reclassifyByDueDate:false,sameDay:'overdue'},sourceFilename='upload.xlsx'):Promise<Dataset>{
  const referenceDate=date(reference);await inspectZip(buffer);const book=new ExcelJS.Workbook();await book.xlsx.load(buffer as never);
  if(book.worksheets.length!==3)throw Error('THREE_SHEETS_REQUIRED');
  const ds:Dataset={schemaVersion:1,sourceFilename:basename(sourceFilename.replaceAll('\\','/')).slice(0,200),policy,sha256:'',referenceDate,sheets:[],rows:[],issues:[],rawTotals:{upcoming:'0.00',overdue:'0.00',received:'0.00'},sourceRecords:0};
@@ -83,7 +84,7 @@ export async function parseWorkbook(buffer:Buffer,reference:string,policy:Datase
   }
  }
  issue('CLIENT_NAME_ONLY','warning','',0,'Fonte sem CNPJ/código de cliente: agrupamento pelo nome normalizado, sem identidade fiscal garantida.');
- return ds;
+ return applyReviewedExceptions(ds);
 }
 export function reconciliation(ds:Dataset){return {sourceFilename:ds.sourceFilename,referenceDate:ds.referenceDate,policy:ds.policy,status:ds.issues.some(i=>i.severity==='blocking')?'blocked':'review_required',recordCounts:{source:Object.fromEntries(ds.sheets.map(s=>[s.band,s.records])),accounting:Object.fromEntries((['upcoming','overdue','received'] as const).map(b=>[b,ds.rows.filter(r=>r.band===b).length]))},sourceRecords:ds.sourceRecords,parsedRecords:ds.rows.length,quarantinedRecords:ds.sourceRecords-ds.rows.length,rawTotals:{...ds.rawTotals,global:sum(Object.values(ds.rawTotals))},provisional:consolidatePreview(ds),issues:ds.issues,sheets:ds.sheets};}
 function consolidatePreview(ds:Dataset){const k=consolidate(ds,{year:Number(ds.referenceDate.slice(0,4)),month:Number(ds.referenceDate.slice(5,7))})!.kpis;return {upcoming:k.upcoming,overdue:k.overdue,received:k.received,global:k.global};}

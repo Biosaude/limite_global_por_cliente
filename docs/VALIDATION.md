@@ -1,5 +1,7 @@
 # Validação executada
 
+> Registro histórico da implementação inicial. As decisões financeiras e a validação de 20/10/2026 estão em [FINALIZATION.md](FINALIZATION.md); a classificação por vencimento foi substituída pela preservação das abas de origem.
+
 Ambiente: Node 22+, TypeScript, Vitest, PostgreSQL embarcado PGlite. A suite executa os comandos SQL reais do baseline fornecido e da migration aditiva em bancos descartáveis. Não simula publicação com simples arrays em memória.
 
 | Requisito | Evidência |

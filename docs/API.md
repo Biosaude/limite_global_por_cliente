@@ -11,6 +11,8 @@ Todas as respostas usam `Cache-Control: no-store`. Valores monetários são stri
 | POST | `/api/admin/logout` | Revoga sessão; CSRF obrigatório |
 | GET | `/api/admin/dashboard` | Sessão válida, qualquer papel |
 | POST | `/api/admin/imports?referenceDate=2026-10-19` | Admin; corpo binário XLSX, tipo oficial Excel; retorna `id`, conciliação, política, colunas, contagens e issues |
+| GET | `/api/admin/imports` | Admin; até 50 importações pendentes, metadados sem registros financeiros |
+| GET | `/api/admin/records` | Admin; detalhes paginados da versão publicada, com os mesmos filtros do dashboard |
 | GET | `/api/admin/imports/:id` | Admin; prévia/auditoria persistida |
 | POST | `/api/admin/publications` | Admin; `{importId,expectedCurrentId,reviewedAudit:true}` |
 | GET | `/api/admin/history` | Admin; `{currentId,versions}` com totais/contagens/data/hora |
@@ -22,7 +24,7 @@ Todos os POST exigem cabeçalho `Origin` igual ao `APP_ORIGIN` configurado. Apó
 
 O upload pode informar o nome original em `X-File-Name`, codificado por `encodeURIComponent`; o servidor valida extensão/tamanho e remove diretórios, mantendo o SHA-256 independente do nome.
 
-Upload aceita no máximo 4 MiB, com ZIP expandido limitado a 50 MiB e 1.000 entradas; não aceita macros nem external links. Exige as três abas reais, com seus cabeçalhos distintos, incluindo as duas colunas `Descricao` de A Vencer nas posições originais. Valores monetários calculados pelo navegador não são aceitos como importação. `reclassify=true&sameDay=overdue` pode explicitar a política, sendo esses os únicos valores permitidos.
+Upload aceita no máximo 4 MiB, com ZIP expandido limitado a 50 MiB e 1.000 entradas; não aceita macros nem external links. Exige as três abas reais, com seus cabeçalhos distintos, incluindo as duas colunas `Descricao` de A Vencer nas posições originais. Valores monetários calculados pelo navegador não são aceitos como importação. `reclassify=false&sameDay=overdue` explicita a política vigente: preservar as faixas de origem. `reclassify=true` é rejeitado. Divergências de datas seguem auditadas; a revisão restrita da fonte de 19/10/2026 está documentada em [FINALIZATION.md](FINALIZATION.md).
 
 `GET .../dashboard` exige `year` e `month`. Opcionais: `clients` como IDs separados por vírgula, `representatives` como array JSON codificado na URL, `version` como UUID de publicação. Os filtros se intersectam, antes de KPIs, rankings, participações e série mensal. `version` não permite usar uma posição de outro mês/ano.
 
@@ -33,3 +35,11 @@ Prévia inclui `rawTotals` (por aba de origem), `provisional` (faixas reclassifi
 Publicação usa HTTP 201. Conflito de concorrência ou fonte repetida: 409. Inconsistência impeditiva/revisão ausente: 422. Sessão ausente/expirada: 401. Permissão, origem, CSRF ou exposição pública negada: 403. Período indisponível: 404. Conteúdo inválido: 400/415/422. Banco/configuração indisponível: 503.
 
 As respostas públicas são construídas no servidor exclusivamente com agregados, nomes de clientes/representantes autorizados, valores e IDs técnicos. Nunca retornam snapshot, títulos individuais, dados clínicos, auditoria, usuários ou hashes de senha. Com `PUBLIC_FINANCIAL_DATA_AUTHORIZED=false` (padrão), **todas** as rotas `/api/public/*` retornam 403, mesmo se houver base publicada.
+
+## Revisão de 20/10/2026
+
+A resposta administrativa do dashboard inclui `representatives`: agregados por representante, derivados das mesmas linhas/filtros e ordenados pelo Limite Global. A resposta pública mantém o contrato anterior, sem esse novo ranking. A autorização pública permanece negada por padrão.
+
+`GET /api/admin/records` aceita os mesmos filtros e `version`, além de `page` (1–10000) e `pageSize` (1–100, padrão 50). Retorna `{version,referenceDate,page,pageSize,total,records}`. Cada registro contém apenas cliente, título/parcela, faixa, faixa de origem, emissão/vencimento/recebimento, representante, valor, aba e linha. Não retorna dados clínicos ou `raw_record`. A interface fixa a versão retornada pelo dashboard para evitar misturar publicações.
+
+As decisões restritas são persistidas nas issues como `originalSeverity` e `review` (identificador, data, autoridade, justificativa e fingerprints), assim como em `lgc.publications.validation`. Importações antigas não são alteradas: o administrador deve reimportar a fonte depois da atualização autorizada. Não existe endpoint de dashboard de prévia não publicada.
